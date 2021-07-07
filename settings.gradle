@@ -1,0 +1,2 @@
+rootProject.name = "MinecraftImportingMods"
+include ':app'
