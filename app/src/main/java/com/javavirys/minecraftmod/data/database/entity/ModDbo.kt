@@ -31,7 +31,8 @@ data class ModDbo(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     @ColumnInfo(name = COLUMN_NAME) val name: String,
     @ColumnInfo(name = COLUMN_DESCRIPTION) val description: String,
-    @ColumnInfo(name = COLUMN_ADDON_NAME) val addonName: String
+    @ColumnInfo(name = COLUMN_ADDON_NAME) val addonName: String,
+    val imageName: String
 ) {
 
     companion object {

@@ -16,15 +16,24 @@
 
 package com.javavirys.minecraftmod.presentation.navigation
 
+import androidx.navigation.findNavController
 import com.javavirys.minecraftmod.ActivityProvider
+import com.javavirys.minecraftmod.R
+import com.javavirys.minecraftmod.presentation.screen.FavoriteModListFragmentDirections
+import com.javavirys.minecraftmod.presentation.screen.ModListFragmentDirections
+
 
 class MainRouter(private val activityProvider: ActivityProvider) {
 
     fun navigateToModsScreen() {
-        TODO()
+        activityProvider.activeActivity
+            ?.findNavController(R.id.fragmentContainer)
+            ?.navigate(FavoriteModListFragmentDirections.actionFavoriteModListFragmentToModListFragment())
     }
 
     fun navigateToFavoriteScreen() {
-        TODO()
+        val navController = activityProvider.activeActivity
+            ?.findNavController(R.id.fragmentContainer)
+        navController?.navigate(ModListFragmentDirections.actionModListFragmentToFavoriteModListFragment())
     }
 }

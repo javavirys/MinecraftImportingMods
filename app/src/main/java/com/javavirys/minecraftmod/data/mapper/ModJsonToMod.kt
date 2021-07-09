@@ -28,6 +28,6 @@ class ModJsonToMod(private val context: Context) {
         value.name,
         value.description,
         value.addonName,
-        context.assetsBitmap("images/${value.imageName}")
+        Pair(value.imageName, context.assetsBitmap("images/${value.imageName}"))
     )
 }

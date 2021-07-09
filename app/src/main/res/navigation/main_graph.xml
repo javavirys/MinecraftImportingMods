@@ -3,13 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/trackListFragment">
+    app:startDestination="@id/modListFragment">
 
     <fragment
-        android:id="@+id/trackListFragment"
-        android:name="com.javavirys.minecraftmod.presentation.screen.TrackListFragment"
-        android:label="TrackListFragment"
+        android:id="@+id/modListFragment"
+        android:name="com.javavirys.minecraftmod.presentation.screen.ModListFragment"
+        android:label="ModListFragment"
         tools:layout="@layout/fragment_mod_list">
+
+        <action
+            android:id="@+id/action_modListFragment_to_favoriteModListFragment"
+            app:destination="@id/favoriteModListFragment"
+            app:popUpTo="@id/modListFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/favoriteModListFragment"
+        android:name="com.javavirys.minecraftmod.presentation.screen.FavoriteModListFragment"
+        android:label="FavoriteModListFragment"
+        tools:layout="@layout/fragment_mod_list">
+
+        <action
+            android:id="@+id/action_favoriteModListFragment_to_modListFragment"
+            app:destination="@id/modListFragment"
+            app:popUpTo="@id/favoriteModListFragment"
+            app:popUpToInclusive="true" />
+
     </fragment>
 
 </navigation>

@@ -16,6 +16,7 @@
 
 package com.javavirys.minecraftmod.di
 
+import com.javavirys.minecraftmod.presentation.viewmodel.FavoriteModListViewModel
 import com.javavirys.minecraftmod.presentation.viewmodel.MainViewModel
 import com.javavirys.minecraftmod.presentation.viewmodel.ModListViewModel
 import com.javavirys.minecraftmod.presentation.viewmodel.SplashViewModel
@@ -27,4 +28,5 @@ val viewModelModule = module {
     viewModel { SplashViewModel(get()) }
     viewModel { MainViewModel(get()) }
     viewModel { ModListViewModel(get(), get(named(ASSET_QUALIFIER)),get(named(DATABASE_QUALIFIER))) }
+    viewModel { FavoriteModListViewModel(get(), get(named(DATABASE_QUALIFIER))) }
 }

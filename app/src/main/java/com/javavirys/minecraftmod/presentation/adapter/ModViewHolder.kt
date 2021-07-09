@@ -67,7 +67,7 @@ class ModViewHolder(
 
         titleTextView.text = item.name
         Glide.with(logoImageView)
-            .load(item.image)
+            .load(item.image.second)
             .into(logoImageView)
     }
 

@@ -22,9 +22,10 @@ import com.javavirys.minecraftmod.data.database.entity.ModDbo
 class ModToModDbo {
 
     fun transform(value: Mod) = ModDbo(
-        0,
+        value.id.toLong(),
         value.name,
         value.description,
-        value.addonName
+        value.addonName,
+        value.image.first
     )
 }

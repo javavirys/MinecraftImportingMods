@@ -30,5 +30,5 @@ val repositoryModule = module {
 
     single<ModRepository>(named(ASSET_QUALIFIER)) { AssetModRepository(get()) }
 
-    single<ModRepository>(named(DATABASE_QUALIFIER)) { DatabaseModRepository(get()) }
+    single<ModRepository>(named(DATABASE_QUALIFIER)) { DatabaseModRepository(get(), get()) }
 }

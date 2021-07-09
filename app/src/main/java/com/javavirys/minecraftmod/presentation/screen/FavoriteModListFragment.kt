@@ -22,14 +22,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.javavirys.minecraftmod.R
 import com.javavirys.minecraftmod.presentation.adapter.ModAdapter
-import com.javavirys.minecraftmod.presentation.viewmodel.ModListViewModel
+import com.javavirys.minecraftmod.presentation.viewmodel.FavoriteModListViewModel
 import com.javavirys.minecraftmod.util.extension.findView
 import com.javavirys.minecraftmod.util.extension.setTextColorCompat
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_list) {
+class FavoriteModListFragment : BaseFragment<FavoriteModListViewModel>(R.layout.fragment_mod_list) {
 
-    override val model: ModListViewModel by viewModel()
+    override val model: FavoriteModListViewModel by viewModel()
 
     private val adapter by lazy {
         ModAdapter(
@@ -56,12 +56,12 @@ class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_lis
     }
 
     private fun initTabs() {
-        modsButton.setBackgroundResource(R.drawable.tab_checked)
-        favoriteButton.setBackgroundResource(R.drawable.tab_unchecked)
-        modsTitle.setTextColorCompat(R.color.white)
-        favoriteTitle.setTextColorCompat(R.color.white_50)
-        modsButton.setOnClickListener(null)
-        favoriteButton.setOnClickListener { model.navigateToFavoriteScreen() }
+        modsButton.setBackgroundResource(R.drawable.tab_unchecked)
+        favoriteButton.setBackgroundResource(R.drawable.tab_checked)
+        modsTitle.setTextColorCompat(R.color.white_50)
+        favoriteTitle.setTextColorCompat(R.color.white)
+        modsButton.setOnClickListener { model.navigateToModListScreen() }
+        favoriteButton.setOnClickListener(null)
     }
 
     private fun initRecyclerView(view: View) {
@@ -69,10 +69,6 @@ class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_lis
         recyclerView.adapter = adapter
         model.modsLiveData.observe(viewLifecycleOwner) {
             adapter.setList(it)
-            model.observeDatabase()
-        }
-        model.favoriteLiveData.observe(viewLifecycleOwner) {
-            adapter.updateItem(it)
         }
     }
 }

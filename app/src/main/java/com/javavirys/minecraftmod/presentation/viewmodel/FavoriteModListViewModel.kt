@@ -20,34 +20,18 @@ import com.javavirys.minecraftmod.core.entity.Mod
 import com.javavirys.minecraftmod.domain.repository.ModRepository
 import com.javavirys.minecraftmod.presentation.navigation.MainRouter
 
-class ModListViewModel(
+class FavoriteModListViewModel(
     private val router: MainRouter,
-    private val assetsModRepository: ModRepository,
     private val databaseModRepository: ModRepository
 ) : BaseViewModel() {
 
     val modsLiveData = MutableLiveData<List<Mod>>()
 
-    val favoriteLiveData = MutableLiveData<Mod>()
-
     fun loadMods() {
-        subscribeOnFlow(
-            backgroundCode = { assetsModRepository.getAll() },
-            foregroundCode = {
-                modsLiveData.value = it
-            }
-        )
-    }
-
-    fun observeDatabase() {
         subscribeOnFlow(
             backgroundCode = { databaseModRepository.getAll() },
             foregroundCode = {
-                println("test: database: $it")
-                println("test: database: ${it.size}")
-                it.forEach { item ->
-                    favoriteLiveData.value = item
-                }
+                modsLiveData.value = it
             }
         )
     }
@@ -59,14 +43,12 @@ class ModListViewModel(
             )
         } else {
             launch(
-                backgroundCode = {
-                    databaseModRepository.removeMod(item)
-                }
+                backgroundCode = { databaseModRepository.removeMod(item) }
             )
         }
     }
 
-    fun navigateToFavoriteScreen() {
-        router.navigateToFavoriteScreen()
+    fun navigateToModListScreen() {
+        router.navigateToModsScreen()
     }
 }

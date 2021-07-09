@@ -19,10 +19,10 @@ package com.javavirys.minecraftmod.core.entity
 import android.graphics.Bitmap
 
 data class Mod(
-    val id: Int,
+    var id: Int,
     val name: String,
     val description: String,
     val addonName: String,
-    val image: Bitmap?,
+    val image: Pair<String, Bitmap?>,
     var favorite: Boolean = false
 )
