@@ -34,7 +34,6 @@ class MinecraftModApplication : Application() {
                     appModule,
                     databaseModule,
                     repositoryModule,
-                    interactorModule,
                     navigationModule,
                     viewModelModule
                 )

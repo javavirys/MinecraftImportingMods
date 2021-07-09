@@ -17,6 +17,7 @@
 package com.javavirys.minecraftmod.presentation.screen
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.progressindicator.LinearProgressIndicator
 import com.javavirys.minecraftmod.R
@@ -33,6 +34,9 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        window.decorView.apply { systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION }
+
         model.loadingLiveData.observe(this) {
             when (it) {
                 is Result.Progress -> linearProgressIndicator.progress = it.progress

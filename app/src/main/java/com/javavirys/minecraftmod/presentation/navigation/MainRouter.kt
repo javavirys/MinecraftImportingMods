@@ -19,4 +19,12 @@ package com.javavirys.minecraftmod.presentation.navigation
 import com.javavirys.minecraftmod.ActivityProvider
 
 class MainRouter(private val activityProvider: ActivityProvider) {
+
+    fun navigateToModsScreen() {
+        TODO()
+    }
+
+    fun navigateToFavoriteScreen() {
+        TODO()
+    }
 }

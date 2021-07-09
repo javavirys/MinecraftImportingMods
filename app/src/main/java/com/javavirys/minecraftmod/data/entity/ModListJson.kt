@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.javavirys.minecraftmod.domain.interactor.additional
 
-import com.javavirys.minecraftmod.domain.interactor.Interactor
+package com.javavirys.minecraftmod.data.entity
 
-abstract class InteractorWithoutParam<R> : Interactor<Unit, R> {
+import com.google.gson.annotations.SerializedName
 
-    override suspend fun execute(param: Unit) = execute()
-
-    protected abstract suspend fun execute(): R
-}
+data class ModListJson(
+    @SerializedName("kusf_list") val data: Map<String, ModJson>
+)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,18 @@
  * limitations under the License.
  */
 
-package com.javavirys.minecraftmod.data.database
+package com.javavirys.minecraftmod.data.mapper
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
-import com.javavirys.minecraftmod.data.database.dao.ModDao
-import com.javavirys.minecraftmod.data.database.entity.ModDbo
+import com.google.gson.Gson
+import com.javavirys.minecraftmod.data.entity.ModListJson
+import com.javavirys.minecraftmod.util.extension.readTextAndClose
+import java.io.InputStream
 
-@Database(
-    entities = [
-        ModDbo::class
-    ],
-    version = 1,
-    exportSchema = true
-)
-abstract class AppDatabase : RoomDatabase() {
+class InputStreamToModListJson {
 
-    abstract fun getModDao(): ModDao
+    fun transform(value: InputStream): ModListJson {
+        val json = value.readTextAndClose()
+        val gson = Gson()
+        return gson.fromJson(json, ModListJson::class.java)
+    }
 }

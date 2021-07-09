@@ -14,21 +14,11 @@
  * limitations under the License.
  */
 
-package com.javavirys.minecraftmod.data.database
+package com.javavirys.minecraftmod.util.extension
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
-import com.javavirys.minecraftmod.data.database.dao.ModDao
-import com.javavirys.minecraftmod.data.database.entity.ModDbo
+import android.view.View
+import androidx.annotation.ColorRes
+import androidx.fragment.app.Fragment
 
-@Database(
-    entities = [
-        ModDbo::class
-    ],
-    version = 1,
-    exportSchema = true
-)
-abstract class AppDatabase : RoomDatabase() {
-
-    abstract fun getModDao(): ModDao
-}
+fun <T : View> Fragment.getColor(@ColorRes colorRes: Int) =
+    requireContext().getColorFromRes(colorRes)

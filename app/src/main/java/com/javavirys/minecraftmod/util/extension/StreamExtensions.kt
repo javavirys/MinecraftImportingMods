@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +14,11 @@
  * limitations under the License.
  */
 
-package com.javavirys.minecraftmod.domain.interactor
+package com.javavirys.minecraftmod.util.extension
 
-interface Interactor<P, R> {
+import java.io.InputStream
+import java.nio.charset.Charset
 
-    suspend fun execute(param: P): R
+fun InputStream.readTextAndClose(charset: Charset = Charsets.UTF_8): String {
+    return this.bufferedReader(charset).use { it.readText() }
 }

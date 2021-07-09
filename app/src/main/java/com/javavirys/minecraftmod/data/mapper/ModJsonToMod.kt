@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.javavirys.minecraftmod.domain.interactor.additional
 
-import com.javavirys.minecraftmod.domain.interactor.Interactor
+package com.javavirys.minecraftmod.data.mapper
 
-abstract class InteractorWithoutResult<P> : Interactor<P, Unit> {
+import android.content.Context
+import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.data.entity.ModJson
+import com.javavirys.minecraftmod.util.extension.assetsBitmap
 
-    override suspend fun execute(param: P) = exec(param)
+class ModJsonToMod(private val context: Context) {
 
-    protected abstract suspend fun exec(param: P)
+    fun transform(value: ModJson) = Mod(
+        0,
+        value.name,
+        value.description,
+        value.addonName,
+        context.assetsBitmap("images/${value.imageName}")
+    )
 }

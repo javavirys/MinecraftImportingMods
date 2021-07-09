@@ -13,13 +13,12 @@
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MediaPlayer"
+        android:theme="@style/Theme.BaseTheme"
         tools:ignore="AllowBackup">
 
         <activity
             android:name="com.javavirys.minecraftmod.presentation.screen.SplashActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/Theme.MediaPlayer.Splash">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,7 +27,8 @@
         </activity>
         <activity
             android:name="com.javavirys.minecraftmod.presentation.screen.MainActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.BaseTheme.Main" />
     </application>
 
 </manifest>

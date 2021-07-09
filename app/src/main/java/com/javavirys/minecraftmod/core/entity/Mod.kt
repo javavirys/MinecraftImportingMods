@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,21 +14,15 @@
  * limitations under the License.
  */
 
-package com.javavirys.minecraftmod.data.database
+package com.javavirys.minecraftmod.core.entity
 
-import androidx.room.Database
-import androidx.room.RoomDatabase
-import com.javavirys.minecraftmod.data.database.dao.ModDao
-import com.javavirys.minecraftmod.data.database.entity.ModDbo
+import android.graphics.Bitmap
 
-@Database(
-    entities = [
-        ModDbo::class
-    ],
-    version = 1,
-    exportSchema = true
+data class Mod(
+    val id: Int,
+    val name: String,
+    val description: String,
+    val addonName: String,
+    val image: Bitmap?,
+    var favorite: Boolean = false
 )
-abstract class AppDatabase : RoomDatabase() {
-
-    abstract fun getModDao(): ModDao
-}

@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,10 +20,11 @@ import com.javavirys.minecraftmod.presentation.viewmodel.MainViewModel
 import com.javavirys.minecraftmod.presentation.viewmodel.ModListViewModel
 import com.javavirys.minecraftmod.presentation.viewmodel.SplashViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel { SplashViewModel(get()) }
     viewModel { MainViewModel(get()) }
-    viewModel { ModListViewModel(get()) }
+    viewModel { ModListViewModel(get(), get(named(ASSET_QUALIFIER)),get(named(DATABASE_QUALIFIER))) }
 }

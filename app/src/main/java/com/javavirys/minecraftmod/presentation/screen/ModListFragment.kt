@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 Vitaliy Sychov. All rights reserved.
+ * Copyright 2021 Vitaliy Sychov
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,80 +13,64 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.javavirys.minecraftmod.presentation.screen
 
 import android.os.Bundle
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.LinearInterpolator
-import android.view.animation.RotateAnimation
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.widget.Toolbar
-import androidx.cardview.widget.CardView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.javavirys.minecraftmod.R
+import com.javavirys.minecraftmod.presentation.adapter.ModAdapter
 import com.javavirys.minecraftmod.presentation.viewmodel.ModListViewModel
 import com.javavirys.minecraftmod.util.extension.findView
+import com.javavirys.minecraftmod.util.extension.setTextColorCompat
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class TrackListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_list) {
 
     override val model: ModListViewModel by viewModel()
 
-//    private val adapter by lazy { TrackAdapter { model.navigateToTrackScreen(it) } }
-
-    private lateinit var trackRecyclerView: RecyclerView
-
-    private lateinit var progressLayout: ConstraintLayout
-
-    private lateinit var playingLayout: CardView
-
-    private lateinit var coverImageView: ImageView
-
-    private lateinit var playImageView: ImageView
-
-    private lateinit var nextImageView: ImageView
-
-    private lateinit var nameTextView: TextView
-
-    private lateinit var singerTextView: TextView
-
-    private val rotateAnimation = RotateAnimation(
-        0f,
-        360f,
-        Animation.RELATIVE_TO_SELF,
-        0.5f,
-        Animation.RELATIVE_TO_SELF,
-        0.5f
-    ).also {
-        it.repeatCount = Animation.INFINITE
-        it.duration = 3000
-        it.interpolator = LinearInterpolator()
+    private val adapter by lazy {
+        ModAdapter(
+            onItemClick = {},
+            onCheckItem = { model.selectItem(it) }
+        )
     }
+
+    private val modsButton by lazy { requireActivity().findView<View>(R.id.modsView) }
+
+    private val modsTitle by lazy { requireActivity().findView<TextView>(R.id.modsTextView) }
+
+    private val favoriteButton by lazy { requireActivity().findView<View>(R.id.favoriteView) }
+
+    private val favoriteTitle by lazy { requireActivity().findView<TextView>(R.id.favoriteTextView) }
+
+    private lateinit var recyclerView: RecyclerView
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        progressLayout = view.findView(R.id.progressLayout)
-//        initToolbar()
-//        initRecyclerView(view)
+        initTabs()
+        initRecyclerView(view)
+        model.loadMods()
     }
 
-    private fun initToolbar() {
-        val toolbar = requireActivity().findView<Toolbar>(R.id.toolbar)
-//        toolbar.setTitle(R.string.track_list_title)
+    private fun initTabs() {
+        modsButton.setBackgroundResource(R.drawable.tab_checked)
+        favoriteButton.setBackgroundResource(R.drawable.tab_unchecked)
+        modsTitle.setTextColorCompat(R.color.white)
+        favoriteTitle.setTextColorCompat(R.color.white_50)
     }
 
     private fun initRecyclerView(view: View) {
-//        trackRecyclerView = view.findView(R.id.trackRecyclerView)
-//        trackRecyclerView.adapter = adapter
-
-//        model.tracksLiveData.observe(viewLifecycleOwner) {
-//            if (it is Result.Success) {
-//                adapter.addItem(it.data)
-//            }
-//        }
+        recyclerView = view.findView(R.id.recyclerView)
+        recyclerView.adapter = adapter
+        model.modsLiveData.observe(viewLifecycleOwner) {
+            adapter.setList(it)
+            model.observeDatabase()
+        }
+        model.favoriteLiveData.observe(viewLifecycleOwner) {
+            adapter.updateItem(it)
+        }
     }
 }

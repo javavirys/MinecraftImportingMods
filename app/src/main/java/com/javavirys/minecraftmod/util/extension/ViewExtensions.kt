@@ -19,10 +19,10 @@ package com.javavirys.minecraftmod.util.extension
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.SeekBar
+import android.widget.TextView
+import androidx.annotation.ColorRes
 import androidx.annotation.IdRes
 import androidx.annotation.LayoutRes
-import androidx.appcompat.widget.AppCompatSeekBar
 import androidx.core.view.ViewCompat
 import com.google.android.material.snackbar.Snackbar
 
@@ -58,16 +58,7 @@ fun View.showSnackbar(
     }
 }
 
-fun AppCompatSeekBar.setOnProgressChanged(
-    onProgressChanged: (seekBar: SeekBar?, progress: Int, fromUser: Boolean) -> Unit
-) {
-    setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-
-        override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-            onProgressChanged(seekBar, progress, fromUser)
-        }
-
-        override fun onStartTrackingTouch(seekBar: SeekBar?) = Unit
-        override fun onStopTrackingTouch(seekBar: SeekBar?) = Unit
-    })
+fun TextView.setTextColorCompat(@ColorRes colorRes: Int) {
+    val color = context.getColorFromRes(colorRes)
+    setTextColor(color)
 }

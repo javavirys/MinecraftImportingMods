@@ -3,4 +3,7 @@
 
     <string name="ok">OK</string>
 
+    <string name="main_activity_mods">Mods</string>
+    <string name="main_activity_favorite">Favorite</string>
+
 </resources>
