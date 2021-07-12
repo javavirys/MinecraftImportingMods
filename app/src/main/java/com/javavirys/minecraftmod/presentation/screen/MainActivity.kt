@@ -29,8 +29,19 @@ class MainActivity : BaseActivity<MainViewModel>(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setFullScreenMode()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        setFullScreenMode()
+    }
+
+    private fun setFullScreenMode() {
         window.decorView.apply {
-            systemUiVisibility = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+            systemUiVisibility = (View.SYSTEM_UI_FLAG_IMMERSIVE
+                    or View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY)
         }
     }
 }

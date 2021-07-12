@@ -16,6 +16,9 @@
             app:destination="@id/favoriteModListFragment"
             app:popUpTo="@id/modListFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_modListFragment_to_viewerFragment"
+            app:destination="@id/viewerFragment" />
 
     </fragment>
 
@@ -30,7 +33,21 @@
             app:destination="@id/modListFragment"
             app:popUpTo="@id/favoriteModListFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_favoriteModListFragment_to_viewerFragment"
+            app:destination="@id/viewerFragment" />
 
+    </fragment>
+
+    <fragment
+        android:id="@+id/viewerFragment"
+        android:name="com.javavirys.minecraftmod.presentation.screen.ViewerFragment"
+        android:label="ViewerFragment"
+        tools:layout="@layout/fragment_viewer">
+
+        <argument
+            android:name="mod"
+            app:argType="com.javavirys.minecraftmod.core.entity.Mod" />
     </fragment>
 
 </navigation>

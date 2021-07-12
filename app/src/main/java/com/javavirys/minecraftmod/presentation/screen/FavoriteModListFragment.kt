@@ -33,7 +33,7 @@ class FavoriteModListFragment : BaseFragment<FavoriteModListViewModel>(R.layout.
 
     private val adapter by lazy {
         ModAdapter(
-            onItemClick = {},
+            onItemClick = { model.navigateToModViewer(it) },
             onCheckItem = { model.selectItem(it) }
         )
     }

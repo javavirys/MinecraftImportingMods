@@ -31,7 +31,7 @@ class AssetModRepository(
 
     override fun getAll() = flow {
         val am: AssetManager = context.assets
-        val stream = am.open("content.json")
+        val stream = am.open(CONTENT_NAME)
         val modListJson = InputStreamToModListJson().transform(stream)
         val modList = ModListJsonToModList(context).transform(modListJson)
         emit(modList)
@@ -43,5 +43,9 @@ class AssetModRepository(
 
     override suspend fun removeMod(item: Mod) {
         throw UnsupportedOperationException()
+    }
+
+    companion object {
+        private const val CONTENT_NAME = "content.json"
     }
 }

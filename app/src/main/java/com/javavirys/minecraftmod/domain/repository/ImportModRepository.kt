@@ -14,20 +14,13 @@
  * limitations under the License.
  */
 
-package com.javavirys.minecraftmod.data.mapper
+package com.javavirys.minecraftmod.domain.repository
 
-import android.content.Context
 import com.javavirys.minecraftmod.core.entity.Mod
-import com.javavirys.minecraftmod.data.entity.ModJson
-import com.javavirys.minecraftmod.util.extension.loadBitmapFromAssets
 
-class ModJsonToMod(private val context: Context) {
+interface ImportModRepository {
 
-    fun transform(value: ModJson) = Mod(
-        0,
-        value.name,
-        value.description,
-        value.addonName,
-        Pair(value.imageName, context.loadBitmapFromAssets("images/${value.imageName}"))
-    )
+    suspend fun importMod(item: Mod)
+
+    suspend fun isImportedMod(item: Mod): Boolean
 }

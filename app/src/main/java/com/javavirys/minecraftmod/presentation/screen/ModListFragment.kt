@@ -33,7 +33,7 @@ class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_lis
 
     private val adapter by lazy {
         ModAdapter(
-            onItemClick = {},
+            onItemClick = { model.navigateToModViewer(it) },
             onCheckItem = { model.selectItem(it) }
         )
     }

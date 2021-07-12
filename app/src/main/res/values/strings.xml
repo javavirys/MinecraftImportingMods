@@ -6,4 +6,10 @@
     <string name="main_activity_mods">Mods</string>
     <string name="main_activity_favorite">Favorite</string>
 
+    <string name="fragment_viewer_download">Download</string>
+    <string name="fragment_viewer_downloading">Downloading</string>
+    <string name="fragment_viewer_install">Install</string>
+    <string name="fragment_viewer_installed">Installed</string>
+    <string name="fragment_viewer_permission_denied">You will not be able to import mods into the game until you grant read and write permissions to the smartphone\'s file system</string>
+
 </resources>

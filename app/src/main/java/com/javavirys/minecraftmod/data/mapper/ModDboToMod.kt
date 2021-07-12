@@ -19,7 +19,7 @@ package com.javavirys.minecraftmod.data.mapper
 import android.content.Context
 import com.javavirys.minecraftmod.core.entity.Mod
 import com.javavirys.minecraftmod.data.database.entity.ModDbo
-import com.javavirys.minecraftmod.util.extension.assetsBitmap
+import com.javavirys.minecraftmod.util.extension.loadBitmapFromAssets
 
 class ModDboToMod(private val context: Context) {
 
@@ -28,7 +28,7 @@ class ModDboToMod(private val context: Context) {
         value.name,
         value.description,
         value.addonName,
-        Pair(value.imageName, context.assetsBitmap("images/${value.imageName}")),
+        Pair(value.imageName, context.loadBitmapFromAssets("images/${value.imageName}")),
         true
     )
 }

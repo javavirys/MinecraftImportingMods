@@ -1,0 +1,25 @@
+<!--
+  ~ Copyright 2021 Vitaliy Sychov
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="23dp"
+    android:height="23dp"
+    android:viewportWidth="23"
+    android:viewportHeight="23">
+    <path
+        android:fillColor="#B42A34"
+        android:pathData="M22.08,0H0.92C0.4111,0 -0,0.4111 -0,0.92V22.08C-0,22.5889 0.4111,23 0.92,23H22.08C22.5888,23 23,22.5889 23,22.08V0.92C23,0.4111 22.5888,0 22.08,0ZM16.2178,15.6946C16.3443,15.8441 16.238,16.0713 16.0425,16.0713H14.3491C14.214,16.0713 14.0846,16.0109 13.9955,15.9074L11.5,12.9318L9.0045,15.9074C8.9182,16.0109 8.7888,16.0713 8.6508,16.0713H6.9575C6.762,16.0713 6.6556,15.8441 6.7821,15.6946L10.2982,11.5L6.7821,7.3054C6.7538,7.272 6.7356,7.2313 6.7297,7.188C6.7238,7.1446 6.7305,7.1005 6.749,7.0608C6.7675,7.0212 6.7969,6.9876 6.8339,6.9642C6.8708,6.9408 6.9137,6.9285 6.9575,6.9288H8.6508C8.786,6.9288 8.9153,6.9891 9.0045,7.0926L11.5,10.0683L13.9955,7.0926C14.0817,6.9891 14.2111,6.9288 14.3491,6.9288H16.0425C16.238,6.9288 16.3443,7.1559 16.2178,7.3054L12.7017,11.5L16.2178,15.6946Z" />
+</vector>

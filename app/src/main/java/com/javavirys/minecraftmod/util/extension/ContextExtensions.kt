@@ -26,7 +26,7 @@ import java.io.InputStream
 
 fun Context.getColorFromRes(@ColorRes colorRes: Int) = ContextCompat.getColor(this, colorRes)
 
-fun Context.assetsBitmap(path: String): Bitmap? {
+fun Context.loadBitmapFromAssets(path: String): Bitmap? {
     val inputStream: InputStream
     var bitmap: Bitmap? = null
     try {

@@ -43,8 +43,6 @@ class ModListViewModel(
         subscribeOnFlow(
             backgroundCode = { databaseModRepository.getAll() },
             foregroundCode = {
-                println("test: database: $it")
-                println("test: database: ${it.size}")
                 it.forEach { item ->
                     favoriteLiveData.value = item
                 }
@@ -68,5 +66,9 @@ class ModListViewModel(
 
     fun navigateToFavoriteScreen() {
         router.navigateToFavoriteScreen()
+    }
+
+    fun navigateToModViewer(item: Mod) {
+        router.navigateToViewerScreen(item)
     }
 }

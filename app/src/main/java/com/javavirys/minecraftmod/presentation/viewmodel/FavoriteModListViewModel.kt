@@ -51,4 +51,8 @@ class FavoriteModListViewModel(
     fun navigateToModListScreen() {
         router.navigateToModsScreen()
     }
+
+    fun navigateToModViewer(item: Mod) {
+        router.navigateToViewerScreen(item)
+    }
 }
