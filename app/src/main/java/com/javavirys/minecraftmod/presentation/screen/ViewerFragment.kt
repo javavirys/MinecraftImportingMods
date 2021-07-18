@@ -56,13 +56,21 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
         val descriptionTextView = view.findView<TextView>(R.id.descriptionTextView)
 
         view.findView<ImageView>(R.id.close).setOnClickListener { model.navigateUp() }
+        view.findView<ImageView>(R.id.triangle).setOnClickListener {
+            model.selectItem(args.mod)
+        }
 
         downloadButton.setOnClickListener {
             checkPermissions {
                 if (requireContext().packageManager.isPackageInstalled(MINECRAFT_PACKAGE)) {
                     installMod(args.mod)
                 } else {
-                    model.navigateToPlayMarket()
+                    if (model.downloadButtonLiveData.value == DownloadButtonState.STATE_INSTALL) {
+                        model.navigateToPlayMarket()
+                        model.updateStatus()
+                    } else {
+                        installMod(args.mod)
+                    }
                 }
             }
         }
@@ -88,21 +96,23 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
         }
 
         Glide.with(this)
-            .load(requireContext().loadBitmapFromAssets("images/${args.mod.image.first}"))
+            .load(requireContext().loadBitmapFromAssets("images/${args.mod.imagePath}"))
             .into(logoImageView)
 
-        val starImage = if (args.mod.favorite) {
-            R.drawable.ic_star_selected
-        } else {
-            R.drawable.ic_star_unselected
-        }
-
-        Glide.with(this)
-            .load(starImage)
-            .into(star)
         titleTextView.text = args.mod.name
         descriptionTextView.text = args.mod.description
         checkPermissions()
+        model.favoriteLiveData.observe(viewLifecycleOwner) {
+            val starImage = if (it) {
+                R.drawable.ic_star_selected
+            } else {
+                R.drawable.ic_star_unselected
+            }
+
+            Glide.with(this)
+                .load(starImage)
+                .into(star)
+        }
     }
 
     private fun installMod(mod: Mod) {

@@ -29,7 +29,7 @@ class MainRouter(private val activityProvider: ActivityProvider) {
     fun navigateToViewerScreen(item: Mod) {
         val navController = activityProvider.activeActivity
             ?.findNavController(R.id.fragmentContainer)
-        val newItem = item.copy(image = Pair(item.image.first, null))
+        val newItem = item.copy(image = null)
         navController?.navigate(R.id.viewerFragment, bundleOf("mod" to newItem))
     }
 

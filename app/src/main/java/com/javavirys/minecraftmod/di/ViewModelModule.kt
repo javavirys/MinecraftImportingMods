@@ -13,6 +13,6 @@ val viewModelModule = module {
     }
     viewModel { FavoriteModListViewModel(get(), get(named(DATABASE_QUALIFIER))) }
     viewModel {
-        ViewerViewModel(get(), get())
+        ViewerViewModel(get(), get(), get(named(DATABASE_QUALIFIER)))
     }
 }

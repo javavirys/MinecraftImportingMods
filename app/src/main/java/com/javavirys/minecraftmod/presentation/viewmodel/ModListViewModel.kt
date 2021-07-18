@@ -42,9 +42,7 @@ class ModListViewModel(
             )
         } else {
             launch(
-                backgroundCode = {
-                    databaseModRepository.removeMod(item)
-                }
+                backgroundCode = { databaseModRepository.removeMod(item) }
             )
         }
     }

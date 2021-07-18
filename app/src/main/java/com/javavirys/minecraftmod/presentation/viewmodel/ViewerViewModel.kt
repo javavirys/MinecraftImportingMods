@@ -3,31 +3,41 @@ package com.javavirys.minecraftmod.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.javavirys.minecraftmod.core.entity.Mod
 import com.javavirys.minecraftmod.domain.repository.ImportModRepository
+import com.javavirys.minecraftmod.domain.repository.ModRepository
 import com.javavirys.minecraftmod.presentation.entity.DownloadButtonState
 import com.javavirys.minecraftmod.presentation.navigation.MainRouter
 import kotlinx.coroutines.delay
 
 class ViewerViewModel(
     private val router: MainRouter,
-    private val importModRepository: ImportModRepository
+    private val importModRepository: ImportModRepository,
+    private val databaseModRepository: ModRepository
 ) : BaseViewModel() {
 
     val downloadButtonLiveData = MutableLiveData<DownloadButtonState>().also {
         it.value = DownloadButtonState.STATE_DOWNLOAD
     }
 
+    val favoriteLiveData = MutableLiveData<Boolean>()
+
     fun setMod(mod: Mod) {
+//        launch(
+//            backgroundCode = {
+//                importModRepository.isImportedMod(mod)
+//            },
+//            foregroundCode = { isImported ->
+//                if (isImported) {
+//                    downloadButtonLiveData.value = DownloadButtonState.STATE_INSTALLED
+//                } else {
+//                    downloadButtonLiveData.value = DownloadButtonState.STATE_DOWNLOAD
+//                }
+//            }
+//        )
+
         launch(
-            backgroundCode = {
-                importModRepository.isImportedMod(mod)
-            },
-            foregroundCode = { isImported ->
-                if (isImported) {
-                    downloadButtonLiveData.value = DownloadButtonState.STATE_INSTALLED
-                } else {
-                    downloadButtonLiveData.value = DownloadButtonState.STATE_DOWNLOAD
-                }
-            }
+            backgroundCode = { databaseModRepository.getModByAddonName(mod.addonName) },
+            foregroundCode = { favoriteLiveData.value = it.favorite },
+            catchCode = { favoriteLiveData.value = false }
         )
     }
 
@@ -56,13 +66,38 @@ class ViewerViewModel(
                     }
                 )
             }
-            DownloadButtonState.STATE_INSTALLED -> Unit
+            DownloadButtonState.STATE_INSTALLED -> updateStatus()
             else -> Unit
         }
     }
 
     fun navigateToPlayMarket() {
         router.navigateToPlayMarket(MINECRAFT_PACKAGE)
+    }
+
+    fun selectItem(item: Mod) {
+        item.favorite = !item.favorite
+        favoriteLiveData.value = item.favorite
+        if (item.favorite) {
+            launch(
+                backgroundCode = { databaseModRepository.addMod(item) }
+            )
+        } else {
+            launch(
+                backgroundCode = { databaseModRepository.removeMod(item) }
+            )
+        }
+    }
+
+    fun updateStatus() {
+        launch(
+            backgroundCode = {
+                delay(1000)
+            },
+            foregroundCode = {
+                downloadButtonLiveData.value = DownloadButtonState.STATE_DOWNLOAD
+            }
+        )
     }
 
     companion object {

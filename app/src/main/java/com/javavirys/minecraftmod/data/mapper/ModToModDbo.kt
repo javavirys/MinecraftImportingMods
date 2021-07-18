@@ -10,6 +10,6 @@ class ModToModDbo {
         value.name,
         value.description,
         value.addonName,
-        value.image.first
+        value.imagePath
     )
 }

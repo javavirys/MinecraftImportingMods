@@ -21,6 +21,10 @@ class AssetModRepository(
         emit(modList)
     }
 
+    override fun getModByAddonName(addonName: String): Mod {
+        TODO("Not yet implemented")
+    }
+
     override suspend fun addMod(item: Mod) {
         throw UnsupportedOperationException()
     }

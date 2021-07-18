@@ -16,6 +16,9 @@ class DatabaseModRepository(
     override fun getAll() = modDao.getAll()
         .map { list -> list.map { ModDboToMod(context).transform(it) } }
 
+    override fun getModByAddonName(addonName: String) =
+        ModDboToMod(context).transform(modDao.getModByAddonName(addonName))
+
     override suspend fun addMod(item: Mod) {
         modDao.insert(ModToModDbo().transform(item))
     }

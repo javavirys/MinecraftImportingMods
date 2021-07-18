@@ -37,6 +37,8 @@ class ModViewHolder(
     }
 
     fun bind(item: Mod) {
+        item.callback = { updateFavoriteImage(item) }
+
         itemView.setOnClickListener {
             onItemClick(item)
         }
@@ -50,9 +52,7 @@ class ModViewHolder(
         updateFavoriteImage(item)
 
         titleTextView.text = item.name
-        Glide.with(logoImageView)
-            .load(item.image.second)
-            .into(logoImageView)
+        logoImageView.setImageBitmap(item.image)
     }
 
     private fun updateFavoriteImage(item: Mod) {

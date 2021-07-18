@@ -32,11 +32,16 @@ class ModAdapter(
     }
 
     fun updateItem(item: Mod) {
-        items.forEachIndexed { index, it ->
-            if (item.name == it.name && item.description == it.description && item.addonName == it.addonName) {
+        items.forEach {
+            if (
+                item.name == it.name && item.description == it.description
+                && item.addonName == it.addonName
+            ) {
                 it.id = item.id
-                it.favorite = item.favorite
-                notifyItemChanged(index)
+                if (it.favorite != item.favorite) {
+                    it.favorite = item.favorite
+                    it.callback?.invoke(it)
+                }
             }
         }
     }

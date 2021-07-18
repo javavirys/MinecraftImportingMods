@@ -12,7 +12,8 @@ class ModDboToMod(private val context: Context) {
         value.name,
         value.description,
         value.addonName,
-        Pair(value.imageName, context.loadBitmapFromAssets("images/${value.imageName}")),
+        context.loadBitmapFromAssets("images/${value.imageName}"),
+        value.imageName,
         true
     )
 }
