@@ -1,4 +1,4 @@
-package com.javavirys.minecraftmod.presentation.viewmodel
+package com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,7 +19,7 @@ abstract class BaseViewModel : ViewModel() {
 
     protected fun <R> subscribeOnFlow(
         backgroundCode: suspend () -> Flow<R>,
-        foregroundCode: (result: R) -> Unit,
+        foregroundCode: (R) -> Unit,
         catchCode: (throwable: Throwable) -> Unit = ::onException,
         backgroundDispatcher: CoroutineDispatcher = Dispatchers.IO,
         foregroundDispatcher: CoroutineDispatcher = Dispatchers.Main
@@ -42,16 +42,16 @@ abstract class BaseViewModel : ViewModel() {
 
     protected fun <R> launch(
         backgroundCode: suspend () -> R,
-        foregroundCode: (result: R) -> Unit = {},
+        foregroundCode: (R) -> Unit = {},
         catchCode: (throwable: Throwable) -> Unit = ::onException,
         backgroundDispatcher: CoroutineDispatcher = Dispatchers.IO,
         foregroundDispatcher: CoroutineDispatcher = Dispatchers.Main
     ) {
         viewModelScope.launch(backgroundDispatcher) {
             try {
-                val result = backgroundCode.invoke()
+                val dkjnfjhgfbdbhfdbgjkfgfjkioeewkmnammjjknnvvnvmmbjfhfrnrkiiiwhwhwjwkskjfjfmflbkbk = backgroundCode.invoke()
                 withContext(foregroundDispatcher) {
-                    foregroundCode.invoke(result)
+                    foregroundCode.invoke(dkjnfjhgfbdbhfdbgjkfgfjkioeewkmnammjjknnvvnvmmbjfhfrnrkiiiwhwhwjwkskjfjfmflbkbk)
                 }
             } catch (throwable: Throwable) {
                 withContext(foregroundDispatcher) {

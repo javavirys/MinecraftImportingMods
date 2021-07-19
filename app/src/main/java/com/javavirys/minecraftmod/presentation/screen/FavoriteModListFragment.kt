@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.javavirys.minecraftmod.R
 import com.javavirys.minecraftmod.presentation.adapter.ModAdapter
-import com.javavirys.minecraftmod.presentation.viewmodel.FavoriteModListViewModel
+import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.FavoriteModListViewModel
 import com.javavirys.minecraftmod.util.extension.findView
 import com.javavirys.minecraftmod.util.extension.setTextColorCompat
 import org.koin.androidx.viewmodel.ext.android.viewModel

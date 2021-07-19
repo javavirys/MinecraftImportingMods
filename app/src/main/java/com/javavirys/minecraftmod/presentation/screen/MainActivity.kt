@@ -3,7 +3,7 @@ package com.javavirys.minecraftmod.presentation.screen
 import android.os.Bundle
 import android.view.View
 import com.javavirys.minecraftmod.R
-import com.javavirys.minecraftmod.presentation.viewmodel.MainViewModel
+import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 

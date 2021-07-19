@@ -7,7 +7,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import com.javavirys.minecraftmod.ActivityProvider
 import com.javavirys.minecraftmod.R
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.presentation.screen.FavoriteModListFragmentDirections
 import com.javavirys.minecraftmod.presentation.screen.ModListFragmentDirections
 

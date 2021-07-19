@@ -1,36 +1,22 @@
-package com.javavirys.minecraftmod.presentation.viewmodel
+package com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds
 
 import androidx.lifecycle.MutableLiveData
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.domain.repository.ModRepository
 import com.javavirys.minecraftmod.presentation.navigation.MainRouter
 
-class ModListViewModel(
+class FavoriteModListViewModel(
     private val router: MainRouter,
-    private val assetsModRepository: ModRepository,
     private val databaseModRepository: ModRepository
 ) : BaseViewModel() {
 
     val modsLiveData = MutableLiveData<List<Mod>>()
 
-    val favoriteLiveData = MutableLiveData<Mod>()
-
     fun loadMods() {
-        subscribeOnFlow(
-            backgroundCode = { assetsModRepository.getAll() },
-            foregroundCode = {
-                modsLiveData.value = it
-            }
-        )
-    }
-
-    fun observeDatabase() {
         subscribeOnFlow(
             backgroundCode = { databaseModRepository.getAll() },
             foregroundCode = {
-                it.forEach { item ->
-                    favoriteLiveData.value = item
-                }
+                modsLiveData.value = it
             }
         )
     }
@@ -47,8 +33,8 @@ class ModListViewModel(
         }
     }
 
-    fun navigateToFavoriteScreen() {
-        router.navigateToFavoriteScreen()
+    fun navigateToModListScreen() {
+        router.navigateToModsScreen()
     }
 
     fun navigateToModViewer(item: Mod) {

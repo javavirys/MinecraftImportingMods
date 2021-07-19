@@ -1,4 +1,4 @@
-package com.javavirys.minecraftmod.core.entity
+package com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity
 
 import android.graphics.Bitmap
 import android.os.Parcel

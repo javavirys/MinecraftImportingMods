@@ -1,7 +1,7 @@
-package com.javavirys.minecraftmod.presentation.viewmodel
+package com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds
 
 import androidx.lifecycle.MutableLiveData
-import com.javavirys.minecraftmod.core.entity.Result
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Result
 import com.javavirys.minecraftmod.presentation.navigation.SplashRouter
 import kotlinx.coroutines.delay
 

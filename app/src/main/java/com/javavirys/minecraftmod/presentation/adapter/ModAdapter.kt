@@ -3,7 +3,7 @@ package com.javavirys.minecraftmod.presentation.adapter
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.javavirys.minecraftmod.R
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.util.extension.inflate
 
 class ModAdapter(

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.google.android.material.snackbar.Snackbar
-import com.javavirys.minecraftmod.presentation.viewmodel.BaseViewModel
+import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.BaseViewModel
 
 abstract class BaseFragment<M : BaseViewModel> : Fragment {
 

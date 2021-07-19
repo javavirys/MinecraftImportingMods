@@ -6,7 +6,7 @@ import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.javavirys.minecraftmod.R
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.util.extension.loadBitmapFromAssets
 
 class ModViewHolder(
@@ -20,7 +20,7 @@ class ModViewHolder(
     private val titleTextView by lazy {
         ViewCompat.requireViewById<TextView>(
             itemView,
-            R.id.title
+            R.id.tikfjfgowewoemvmnbjbhgjfjfdhdhfjjueywh
         )
     }
 

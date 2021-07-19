@@ -1,7 +1,7 @@
-package com.javavirys.minecraftmod.presentation.viewmodel
+package com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds
 
 import androidx.lifecycle.MutableLiveData
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.domain.repository.ImportModRepository
 import com.javavirys.minecraftmod.domain.repository.ModRepository
 import com.javavirys.minecraftmod.presentation.entity.DownloadButtonState

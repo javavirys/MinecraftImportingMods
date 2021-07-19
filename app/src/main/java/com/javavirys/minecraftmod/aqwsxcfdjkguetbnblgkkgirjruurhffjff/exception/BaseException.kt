@@ -1,4 +1,4 @@
-package com.javavirys.minecraftmod.core.exception
+package com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.exception
 
 abstract class BaseException : RuntimeException {
 

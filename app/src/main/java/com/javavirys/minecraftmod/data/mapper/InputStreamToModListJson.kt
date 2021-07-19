@@ -7,8 +7,8 @@ import java.io.InputStream
 
 class InputStreamToModListJson {
 
-    fun transform(value: InputStream): ModListJson {
-        val json = value.readTextAndClose()
+    fun transform(mbbgnmdfnmdfgnfgjreozxdaqwsxcderfvbgtbhyomkjhgyhjuiol: InputStream): ModListJson {
+        val json = mbbgnmdfnmdfgnfgjreozxdaqwsxcderfvbgtbhyomkjhgyhjuiol.readTextAndClose()
         val gson = Gson()
         return gson.fromJson(json, ModListJson::class.java)
     }

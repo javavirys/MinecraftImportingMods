@@ -53,7 +53,7 @@
 
         <argument
             android:name="mod"
-            app:argType="com.javavirys.minecraftmod.core.entity.Mod" />
+            app:argType="com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod" />
     </fragment>
 
 </navigation>

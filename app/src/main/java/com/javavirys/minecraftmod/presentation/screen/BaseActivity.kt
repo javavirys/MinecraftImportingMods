@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.snackbar.Snackbar
-import com.javavirys.minecraftmod.presentation.viewmodel.BaseViewModel
+import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.BaseViewModel
 import com.javavirys.minecraftmod.util.extension.findView
 
 abstract class BaseActivity<M : BaseViewModel> : AppCompatActivity {

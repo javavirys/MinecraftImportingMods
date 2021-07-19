@@ -1,6 +1,6 @@
 package com.javavirys.minecraftmod.domain.repository
 
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import kotlinx.coroutines.flow.Flow
 
 interface ModRepository {

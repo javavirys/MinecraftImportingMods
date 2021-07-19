@@ -1,4 +1,4 @@
-package com.javavirys.minecraftmod.presentation.viewmodel
+package com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds
 
 import com.javavirys.minecraftmod.presentation.navigation.MainRouter
 

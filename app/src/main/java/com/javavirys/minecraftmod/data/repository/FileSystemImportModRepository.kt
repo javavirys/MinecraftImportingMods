@@ -5,7 +5,7 @@ import android.content.Intent
 import android.content.Intent.*
 import android.net.Uri
 import android.os.Environment
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.domain.repository.ImportModRepository
 import com.javavirys.minecraftmod.util.FileUtils
 import java.io.File

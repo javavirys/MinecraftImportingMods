@@ -13,10 +13,10 @@ import androidx.navigation.fragment.navArgs
 import com.bumptech.glide.Glide
 import com.google.android.material.button.MaterialButton
 import com.javavirys.minecraftmod.R
-import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.aqwsxcfdjkguetbnblgkkgirjruurhffjff.entity.Mod
 import com.javavirys.minecraftmod.presentation.entity.DownloadButtonState
-import com.javavirys.minecraftmod.presentation.viewmodel.ViewerViewModel
-import com.javavirys.minecraftmod.presentation.viewmodel.ViewerViewModel.Companion.MINECRAFT_PACKAGE
+import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.ViewerViewModel
+import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.ViewerViewModel.Companion.MINECRAFT_PACKAGE
 import com.javavirys.minecraftmod.util.extension.findView
 import com.javavirys.minecraftmod.util.extension.isPackageInstalled
 import com.javavirys.minecraftmod.util.extension.loadBitmapFromAssets
