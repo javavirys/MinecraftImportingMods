@@ -11,11 +11,11 @@ import java.io.InputStream
 fun Context.getColorFromRes(@ColorRes colorRes: Int) = ContextCompat.getColor(this, colorRes)
 
 fun Context.loadBitmapFromAssets(javaviryspath: String): Bitmap? {
-    val inputStream: InputStream
+    val javirysinputStream: InputStream
     var bitmap: Bitmap? = null
     try {
-        inputStream = assets.open(javaviryspath)
-        bitmap = BitmapFactory.decodeStream(inputStream)
+        javirysinputStream = assets.open(javaviryspath)
+        bitmap = BitmapFactory.decodeStream(javirysinputStream)
     } catch (e: IOException) {
         e.printStackTrace()
     }

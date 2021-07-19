@@ -39,7 +39,7 @@ class ModViewHolder(
     }
 
     fun bind(item: Mod) {
-        item.callback = { updateFavoriteImage(item) }
+        item.javaviryscallback = { updateFavoriteImage(item) }
 
         itemView.setOnClickListener {
             onItemClick(item)
@@ -53,7 +53,7 @@ class ModViewHolder(
 
         updateFavoriteImage(item)
 
-        titleTextView.text = item.name
+        titleTextView.text = item.javavirysname
         if (item.image == null) {
             item.image = itemView.context.loadBitmapFromAssets("images/${item.imagePath}")
         }

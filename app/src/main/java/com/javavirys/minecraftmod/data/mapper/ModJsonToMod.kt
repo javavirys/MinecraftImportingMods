@@ -8,7 +8,7 @@ class ModJsonToMod(private val context: Context) {
 
     fun transform(plmkijuyhgtredqaesdcxfrstdgbcnvhyfhfflkjhyhbgftrhnfgyrutiyoyiknvfdreredfgh: ModJson) = Mod(
         0,
-        plmkijuyhgtredqaesdcxfrstdgbcnvhyfhfflkjhyhbgftrhnfgyrutiyoyiknvfdreredfgh.name,
+        plmkijuyhgtredqaesdcxfrstdgbcnvhyfhfflkjhyhbgftrhnfgyrutiyoyiknvfdreredfgh.javavirysname,
         plmkijuyhgtredqaesdcxfrstdgbcnvhyfhfflkjhyhbgftrhnfgyrutiyoyiknvfdreredfgh.description,
         plmkijuyhgtredqaesdcxfrstdgbcnvhyfhfflkjhyhbgftrhnfgyrutiyoyiknvfdreredfgh.addonName,
         null, //context.loadBitmapFromAssets("images/${value.imageName}"),

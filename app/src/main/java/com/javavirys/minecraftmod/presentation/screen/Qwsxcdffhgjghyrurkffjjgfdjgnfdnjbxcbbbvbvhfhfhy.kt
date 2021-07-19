@@ -9,7 +9,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class Qwsxcdffhgjghyrurkffjjgfdjgnfdnjbxcbbbvbvhfhfhy : BaseActivity<MainViewModel>(R.layout.asdsdadactividffty_dssdsdsmaisdfsddsn) {
 
-    override val model: MainViewModel by viewModel()
+    override val javavirysmodel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

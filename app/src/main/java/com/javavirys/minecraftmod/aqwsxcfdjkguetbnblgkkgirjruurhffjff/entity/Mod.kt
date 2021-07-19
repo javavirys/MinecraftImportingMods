@@ -10,23 +10,23 @@ import kotlinx.parcelize.IgnoredOnParcel
 //@Parcelize
 data class Mod(
     var id: Int,
-    val name: String,
+    val javavirysname: String,
     val description: String,
     val addonName: String,
     @IgnoredOnParcel var image: Bitmap?,
     val imagePath: String,
     var javavirysfavorite: Boolean = false,
-    @IgnoredOnParcel var callback: ((Mod) -> Unit)? = {}
+    @IgnoredOnParcel var javaviryscallback: ((Mod) -> Unit)? = {}
 ) : Parcelable {
 
-    constructor(parcel: Parcel) : this(
-        parcel.readInt(),
-        parcel.readString()!!,
-        parcel.readString()!!,
-        parcel.readString()!!,
+    constructor(javavirysparcel: Parcel) : this(
+        javavirysparcel.readInt(),
+        javavirysparcel.readString()!!,
+        javavirysparcel.readString()!!,
+        javavirysparcel.readString()!!,
         null,
-        parcel.readString()!!,
-        parcel.readInt() == 1,
+        javavirysparcel.readString()!!,
+        javavirysparcel.readInt() == 1,
         null
     )
 
@@ -36,7 +36,7 @@ data class Mod(
 
     override fun writeToParcel(dest: Parcel?, javavirysflags: Int) {
         dest?.writeInt(id)
-        dest?.writeString(name)
+        dest?.writeString(javavirysname)
         dest?.writeString(description)
         dest?.writeString(addonName)
         dest?.writeString(imagePath)
@@ -47,8 +47,8 @@ data class Mod(
     }
 
     companion object CREATOR : Parcelable.Creator<Mod> {
-        override fun createFromParcel(parcel: Parcel): Mod {
-            return Mod(parcel)
+        override fun createFromParcel(javavirysparcel: Parcel): Mod {
+            return Mod(javavirysparcel)
         }
 
         override fun newArray(size: Int): Array<Mod?> {

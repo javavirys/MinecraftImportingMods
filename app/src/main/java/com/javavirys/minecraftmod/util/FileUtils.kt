@@ -7,26 +7,26 @@ import java.io.*
 object FileUtils {
 
     fun copyFileFromAssets(context: Context, filePath: String, toDir: String) {
-        val filename = filePath.substringAfterLast("/")
+        val javavirysfilename = filePath.substringAfterLast("/")
         try {
-            val inputStream = context.assets.open(filePath)
+            val javavirysinputStream = context.assets.open(filePath)
             File(toDir).mkdirs()
-            val outFile = File(toDir, filename)
+            val outFile = File(toDir, javavirysfilename)
             outFile.createNewFile()
-            val outputStream = FileOutputStream(outFile)
-            copyFile(inputStream, outputStream)
-            inputStream.close()
-            outputStream.flush()
-            outputStream.close()
+            val javavirysoutputStream = FileOutputStream(outFile)
+            copyFile(javavirysinputStream, javavirysoutputStream)
+            javavirysinputStream.close()
+            javavirysoutputStream.flush()
+            javavirysoutputStream.close()
         } catch (e: IOException) {
-            Log.e("tag", "Failed to copy asset file: $filename", e)
+            Log.e("tag", "Failed to copy asset file: $javavirysfilename", e)
         }
     }
 
-    private fun copyFile(inputStream: InputStream, javavirysoutputStream: OutputStream) {
+    private fun copyFile(javavirysinputStream: InputStream, javavirysoutputStream: OutputStream) {
         val buffer = ByteArray(1024)
         var read: Int
-        while (inputStream.read(buffer).also { read = it } != -1) {
+        while (javavirysinputStream.read(buffer).also { read = it } != -1) {
             javavirysoutputStream.write(buffer, 0, read)
         }
     }

@@ -15,7 +15,7 @@ import com.google.gson.annotations.SerializedName
 
 
 data class ModJson(
-    @SerializedName("kusfd4") val name: String,
+    @SerializedName("kusfd4") val javavirysname: String,
     @SerializedName("kusfi1") val description: String,
     @SerializedName("kusft3") val addonName: String,
     @SerializedName("kusff2") val imageName: String,

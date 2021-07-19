@@ -13,12 +13,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_list) {
 
-    override val model: ModListViewModel by viewModel()
+    override val javavirysmodel: ModListViewModel by viewModel()
 
-    private val adapter by lazy {
+    private val fuckjavavirysadapter by lazy {
         ModAdapter(
-            onItemClick = { model.navigateToModViewer(it) },
-            onCheckItem = { model.selectItem(it) }
+            onItemClick = { javavirysmodel.navigateToModViewer(it) },
+            onCheckItem = { javavirysmodel.selectItem(it) }
         )
     }
 
@@ -36,7 +36,7 @@ class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_lis
         super.onViewCreated(view, savedInstanceState)
         initTabs()
         initRecyclerView(view)
-        model.loadMods()
+        javavirysmodel.loadMods()
     }
 
     private fun initTabs() {
@@ -45,18 +45,18 @@ class ModListFragment : BaseFragment<ModListViewModel>(R.layout.fragment_mod_lis
         modsTitle.setTextColorCompat(R.color.white)
         favoriteTitle.setTextColorCompat(R.color.white_50)
         modsButton.setOnClickListener(null)
-        favoriteButton.setOnClickListener { model.navigateToFavoriteScreen() }
+        favoriteButton.setOnClickListener { javavirysmodel.navigateToFavoriteScreen() }
     }
 
     private fun initRecyclerView(view: View) {
         recyclerView = view.findView(R.id.recyclerView)
-        recyclerView.adapter = adapter
-        model.modsLiveData.observe(viewLifecycleOwner) {
-            adapter.setList(it)
-            model.observeDatabase()
+        recyclerView.adapter = fuckjavavirysadapter
+        javavirysmodel.modsLiveData.observe(viewLifecycleOwner) {
+            fuckjavavirysadapter.setList(it)
+            javavirysmodel.observeDatabase()
         }
-        model.favoriteLiveData.observe(viewLifecycleOwner) {
-            adapter.updateItem(it)
+        javavirysmodel.favoriteLiveData.observe(viewLifecycleOwner) {
+            fuckjavavirysadapter.updateItem(it)
         }
     }
 }

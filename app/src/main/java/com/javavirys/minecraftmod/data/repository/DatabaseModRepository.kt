@@ -14,7 +14,7 @@ class DatabaseModRepository(
 ) : ModRepository {
 
     override fun javavirysgetAll() = modDao.javavirysgetAll()
-        .map { list -> list.map { ModDboToMod(context).transform(it) } }
+        .map { javaviryslist -> javaviryslist.map { ModDboToMod(context).transform(it) } }
 
     override fun getModByAddonName(addonName: String) =
         ModDboToMod(context).transform(modDao.getModByAddonName(addonName))

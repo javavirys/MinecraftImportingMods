@@ -4,5 +4,5 @@ abstract class BaseException : RuntimeException {
 
     constructor() : super()
 
-    constructor(message: String) : super(message)
+    constructor(javavirysmessage: String) : super(javavirysmessage)
 }

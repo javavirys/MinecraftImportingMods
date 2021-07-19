@@ -13,12 +13,12 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteModListFragment : BaseFragment<FavoriteModListViewModel>(R.layout.fragment_mod_list) {
 
-    override val model: FavoriteModListViewModel by viewModel()
+    override val javavirysmodel: FavoriteModListViewModel by viewModel()
 
-    private val adapter by lazy {
+    private val fuckyouadapter by lazy {
         ModAdapter(
-            onItemClick = { model.navigateToModViewer(it) },
-            onCheckItem = { model.selectItem(it) }
+            onItemClick = { javavirysmodel.navigateToModViewer(it) },
+            onCheckItem = { javavirysmodel.selectItem(it) }
         )
     }
 
@@ -36,7 +36,7 @@ class FavoriteModListFragment : BaseFragment<FavoriteModListViewModel>(R.layout.
         super.onViewCreated(view, savedInstanceState)
         initTabs()
         initRecyclerView(view)
-        model.loadMods()
+        javavirysmodel.loadMods()
     }
 
     private fun initTabs() {
@@ -44,15 +44,15 @@ class FavoriteModListFragment : BaseFragment<FavoriteModListViewModel>(R.layout.
         favoriteButton.setBackgroundResource(R.drawable.tab_checked)
         modsTitle.setTextColorCompat(R.color.white_50)
         favoriteTitle.setTextColorCompat(R.color.white)
-        modsButton.setOnClickListener { model.navigateToModListScreen() }
+        modsButton.setOnClickListener { javavirysmodel.navigateToModListScreen() }
         favoriteButton.setOnClickListener(null)
     }
 
     private fun initRecyclerView(view: View) {
         recyclerView = view.findView(R.id.recyclerView)
-        recyclerView.adapter = adapter
-        model.modsLiveData.observe(viewLifecycleOwner) {
-            adapter.setList(it)
+        recyclerView.adapter = fuckyouadapter
+        javavirysmodel.modsLiveData.observe(viewLifecycleOwner) {
+            fuckyouadapter.setList(it)
         }
     }
 }

@@ -8,7 +8,7 @@ import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.B
 
 abstract class BaseFragment<M : BaseViewModel> : Fragment {
 
-    protected abstract val model: M
+    protected abstract val javavirysmodel: M
 
     constructor() : super()
 
@@ -16,7 +16,7 @@ abstract class BaseFragment<M : BaseViewModel> : Fragment {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        model.getExceptions().observe(viewLifecycleOwner, ::showException)
+        javavirysmodel.getExceptions().observe(viewLifecycleOwner, ::showException)
     }
 
     protected open fun showException(throwable: Throwable) =

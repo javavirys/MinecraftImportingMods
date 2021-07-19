@@ -25,22 +25,22 @@ class ModAdapter(
 
     override fun getItemCount() = items.size
 
-    fun setList(list: List<Mod>) {
+    fun setList(javaviryslist: List<Mod>) {
         items.clear()
-        items.addAll(list)
+        items.addAll(javaviryslist)
         notifyDataSetChanged()
     }
 
     fun updateItem(item: Mod) {
         items.forEach {
             if (
-                item.name == it.name && item.description == it.description
+                item.javavirysname == it.javavirysname && item.description == it.description
                 && item.addonName == it.addonName
             ) {
                 it.id = item.id
                 if (it.javavirysfavorite != item.javavirysfavorite) {
                     it.javavirysfavorite = item.javavirysfavorite
-                    it.callback?.invoke(it)
+                    it.javaviryscallback?.invoke(it)
                 }
             }
         }

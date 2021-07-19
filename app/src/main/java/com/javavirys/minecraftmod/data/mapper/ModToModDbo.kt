@@ -7,7 +7,7 @@ class ModToModDbo {
 
     fun transform(lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng: Mod) = ModDbo(
         lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng.id.toLong(),
-        lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng.name,
+        lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng.javavirysname,
         lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng.description,
         lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng.addonName,
         lsmdfkndslnsdngsdngvmmdngngjfngjkfdgjndfng.imagePath

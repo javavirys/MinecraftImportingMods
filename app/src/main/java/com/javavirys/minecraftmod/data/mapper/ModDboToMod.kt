@@ -8,7 +8,7 @@ class ModDboToMod(private val context: Context) {
 
     fun transform(plmjkuyhbgtrfdeswqfsjdklrioroflfvmkfjdjfkgjgulfyfhfhfhfhhfhjkjkjk: ModDbo) = Mod(
         plmjkuyhbgtrfdeswqfsjdklrioroflfvmkfjdjfkgjgulfyfhfhfhfhhfhjkjkjk.id.toInt(),
-        plmjkuyhbgtrfdeswqfsjdklrioroflfvmkfjdjfkgjgulfyfhfhfhfhhfhjkjkjk.name,
+        plmjkuyhbgtrfdeswqfsjdklrioroflfvmkfjdjfkgjgulfyfhfhfhfhhfhjkjkjk.javavirysname,
         plmjkuyhbgtrfdeswqfsjdklrioroflfvmkfjdjfkgjgulfyfhfhfhfhhfhjkjkjk.description,
         plmjkuyhbgtrfdeswqfsjdklrioroflfvmkfjdjfkgjgulfyfhfhfhfhhfhjkjkjk.addonName,
         null, //context.loadBitmapFromAssets("images/${value.imageName}"),

@@ -13,7 +13,7 @@ import com.javavirys.minecraftmod.data.database.entity.ModDbo.Companion.TABLE_NA
 )
 data class ModDbo(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
-    @ColumnInfo(name = COLUMN_NAME) val name: String,
+    @ColumnInfo(name = COLUMN_NAME) val javavirysname: String,
     @ColumnInfo(name = COLUMN_DESCRIPTION) val description: String,
     @ColumnInfo(name = COLUMN_ADDON_NAME) val addonName: String,
     val imageName: String

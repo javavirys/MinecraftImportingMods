@@ -27,7 +27,7 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
 
     private val args: ViewerFragmentArgs by navArgs()
 
-    override val model: ViewerViewModel by viewModel()
+    override val javavirysmodel: ViewerViewModel by viewModel()
 
     private val modsButton by lazy { requireActivity().findView<View>(R.id.modsView) }
 
@@ -41,7 +41,7 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        model.setMod(args.mod)
+        javavirysmodel.setMod(args.mod)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -55,9 +55,9 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
         val titleTextView = view.findView<TextView>(R.id.titleTextView)
         val descriptionTextView = view.findView<TextView>(R.id.descriptionTextView)
 
-        view.findView<ImageView>(R.id.close).setOnClickListener { model.javavirysnavigateUp() }
+        view.findView<ImageView>(R.id.close).setOnClickListener { javavirysmodel.javavirysnavigateUp() }
         view.findView<ImageView>(R.id.triangle).setOnClickListener {
-            model.selectItem(args.mod)
+            javavirysmodel.selectItem(args.mod)
         }
 
         downloadButton.setOnClickListener {
@@ -65,9 +65,9 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
                 if (requireContext().packageManager.isPackageInstalled(MINECRAFT_PACKAGE)) {
                     installMod(args.mod)
                 } else {
-                    if (model.downloadButtonLiveData.value == DownloadButtonState.STATE_INSTALL) {
-                        model.navigateToPlayMarket()
-                        model.updateStatus()
+                    if (javavirysmodel.downloadButtonLiveData.value == DownloadButtonState.STATE_INSTALL) {
+                        javavirysmodel.navigateToPlayMarket()
+                        javavirysmodel.updateStatus()
                     } else {
                         installMod(args.mod)
                     }
@@ -75,7 +75,7 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
             }
         }
 
-        model.downloadButtonLiveData.observe(viewLifecycleOwner) {
+        javavirysmodel.downloadButtonLiveData.observe(viewLifecycleOwner) {
             when (it) {
                 DownloadButtonState.STATE_DOWNLOAD -> {
                     downloadButton.isEnabled = true
@@ -99,10 +99,10 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
             .load(requireContext().loadBitmapFromAssets("images/${args.mod.imagePath}"))
             .into(logoImageView)
 
-        titleTextView.text = args.mod.name
+        titleTextView.text = args.mod.javavirysname
         descriptionTextView.text = args.mod.description
         javavirysllsfdsfdghnvnnvvhhnncjbf()
-        model.favoriteLiveData.observe(viewLifecycleOwner) {
+        javavirysmodel.favoriteLiveData.observe(viewLifecycleOwner) {
             val starImage = if (it) {
                 R.drawable.ic_star_selected
             } else {
@@ -125,7 +125,7 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
     }
 
     private fun installMod(mod: Mod) {
-        model.installMod(mod)
+        javavirysmodel.installMod(mod)
     }
 
     private fun initTabs() {

@@ -7,13 +7,13 @@ import com.javavirys.minecraftmod.data.entity.ModListJson
 class ModListJsonToModList(private val context: Context) {
 
     fun transform(qwetyuioplkjhgfdsazxcvbnmqazxswedcrfvbgttfcdeswaq: ModListJson): List<Mod> {
-        val list = mutableListOf<Mod>()
+        val javaviryslist = mutableListOf<Mod>()
         qwetyuioplkjhgfdsazxcvbnmqazxswedcrfvbgttfcdeswaq.ksdmkjgrggrujkjfnvjkdbnjdfbnjdjdfslksldoffhgrnfhr
             .values
             .forEach {
-                list.add(ModJsonToMod(context).transform(it))
+                javaviryslist.add(ModJsonToMod(context).transform(it))
             }
 
-        return list
+        return javaviryslist
     }
 }

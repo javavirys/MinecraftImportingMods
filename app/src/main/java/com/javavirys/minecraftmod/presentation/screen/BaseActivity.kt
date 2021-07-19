@@ -9,7 +9,7 @@ import com.javavirys.minecraftmod.util.extension.findView
 
 abstract class BaseActivity<M : BaseViewModel> : AppCompatActivity {
 
-    protected abstract val model: M
+    protected abstract val javavirysmodel: M
 
     constructor() : super()
 
@@ -17,7 +17,7 @@ abstract class BaseActivity<M : BaseViewModel> : AppCompatActivity {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        model.getExceptions().observe(this, ::showException)
+        javavirysmodel.getExceptions().observe(this, ::showException)
     }
 
     protected open fun showException(throwable: Throwable) =

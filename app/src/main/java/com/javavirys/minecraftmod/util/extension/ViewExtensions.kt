@@ -10,8 +10,8 @@ import androidx.annotation.LayoutRes
 import androidx.core.view.ViewCompat
 import com.google.android.material.snackbar.Snackbar
 
-fun ViewGroup.inflate(@LayoutRes layoutId: Int): View =
-    LayoutInflater.from(context).inflate(layoutId, this, false)
+fun ViewGroup.inflate(@LayoutRes javaviryslayoutId: Int): View =
+    LayoutInflater.from(context).inflate(javaviryslayoutId, this, false)
 
 fun <T : View> View.findView(@IdRes idRes: Int): T = ViewCompat.requireViewById(this, idRes)
 
@@ -29,12 +29,12 @@ fun View.showSnackbar(
 }
 
 fun View.showSnackbar(
-    msg: String,
+    javavirysmsg: String,
     length: Int,
     actionMessage: CharSequence?,
     action: (View) -> Unit = {}
 ) {
-    val snackbar = Snackbar.make(this, msg, length)
+    val snackbar = Snackbar.make(this, javavirysmsg, length)
     if (actionMessage != null) {
         snackbar.setAction(actionMessage) {
             action(this)
