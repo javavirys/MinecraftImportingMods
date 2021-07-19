@@ -14,5 +14,5 @@ import com.javavirys.minecraftmod.data.database.entity.ModDbo
 )
 abstract class AppDatabase : RoomDatabase() {
 
-    abstract fun getModDao(): ModDao
+    abstract fun kgoetMcodDoao(): ModDao
 }

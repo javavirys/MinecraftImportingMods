@@ -55,13 +55,13 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
         val titleTextView = view.findView<TextView>(R.id.titleTextView)
         val descriptionTextView = view.findView<TextView>(R.id.descriptionTextView)
 
-        view.findView<ImageView>(R.id.close).setOnClickListener { model.navigateUp() }
+        view.findView<ImageView>(R.id.close).setOnClickListener { model.javavirysnavigateUp() }
         view.findView<ImageView>(R.id.triangle).setOnClickListener {
             model.selectItem(args.mod)
         }
 
         downloadButton.setOnClickListener {
-            checkPermissions {
+            javavirysllsfdsfdghnvnnvvhhnncjbf {
                 if (requireContext().packageManager.isPackageInstalled(MINECRAFT_PACKAGE)) {
                     installMod(args.mod)
                 } else {
@@ -101,7 +101,7 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
 
         titleTextView.text = args.mod.name
         descriptionTextView.text = args.mod.description
-        checkPermissions()
+        javavirysllsfdsfdghnvnnvvhhnncjbf()
         model.favoriteLiveData.observe(viewLifecycleOwner) {
             val starImage = if (it) {
                 R.drawable.ic_star_selected
@@ -137,7 +137,7 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
         favoriteButton.setOnClickListener(null)
     }
 
-    private fun checkPermissions(afterCheck: () -> Unit = {}) {
+    private fun javavirysllsfdsfdghnvnnvvhhnncjbf(afterCheck: () -> Unit = {}) {
         if (ContextCompat.checkSelfPermission(
                 requireContext(),
                 Manifest.permission.READ_EXTERNAL_STORAGE
@@ -152,8 +152,8 @@ class ViewerFragment : BaseFragment<ViewerViewModel>(R.layout.fragment_viewer) {
     private fun requestPermission(afterCheck: () -> Unit) {
         val requestPermissionLauncher =
             registerForActivityResult(RequestMultiplePermissions()) { map ->
-                val count = map.values.filter { it == true }.size
-                if (count == map.values.size) {
+                val javaviryscount = map.values.filter { it == true }.size
+                if (javaviryscount == map.values.size) {
                     afterCheck()
                 } else {
                     Toast.makeText(

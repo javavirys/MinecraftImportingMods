@@ -23,11 +23,11 @@ object FileUtils {
         }
     }
 
-    private fun copyFile(inputStream: InputStream, outputStream: OutputStream) {
+    private fun copyFile(inputStream: InputStream, javavirysoutputStream: OutputStream) {
         val buffer = ByteArray(1024)
         var read: Int
         while (inputStream.read(buffer).also { read = it } != -1) {
-            outputStream.write(buffer, 0, read)
+            javavirysoutputStream.write(buffer, 0, read)
         }
     }
 }

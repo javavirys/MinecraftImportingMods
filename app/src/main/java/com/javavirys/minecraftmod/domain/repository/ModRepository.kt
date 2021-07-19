@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 
 interface ModRepository {
 
-    fun getAll(): Flow<List<Mod>>
+    fun javavirysgetAll(): Flow<List<Mod>>
 
     fun getModByAddonName(addonName: String): Mod
 

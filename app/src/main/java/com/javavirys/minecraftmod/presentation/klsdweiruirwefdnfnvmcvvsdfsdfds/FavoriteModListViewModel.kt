@@ -14,7 +14,7 @@ class FavoriteModListViewModel(
 
     fun loadMods() {
         subscribeOnFlow(
-            backgroundCode = { databaseModRepository.getAll() },
+            backgroundCode = { databaseModRepository.javavirysgetAll() },
             foregroundCode = {
                 modsLiveData.value = it
             }
@@ -22,7 +22,7 @@ class FavoriteModListViewModel(
     }
 
     fun selectItem(item: Mod) {
-        if (item.favorite) {
+        if (item.javavirysfavorite) {
             launch(
                 backgroundCode = { databaseModRepository.addMod(item) }
             )

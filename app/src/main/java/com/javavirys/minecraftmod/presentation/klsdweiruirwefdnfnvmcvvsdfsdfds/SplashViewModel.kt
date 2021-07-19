@@ -25,7 +25,7 @@ class SplashViewModel(
                 }
             },
             foregroundCode = {
-                loadingLiveData.value = Result.Success(Unit)
+                loadingLiveData.value = Result.Javaviryssuccelss(Unit)
             }
         )
     }

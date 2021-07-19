@@ -13,7 +13,7 @@ class AssetModRepository(
     private val context: Context
 ) : ModRepository {
 
-    override fun getAll() = flow {
+    override fun javavirysgetAll() = flow {
         val am: AssetManager = context.assets
         val stream = am.open(CONTENT_NAME)
         val modListJson = InputStreamToModListJson().transform(stream)

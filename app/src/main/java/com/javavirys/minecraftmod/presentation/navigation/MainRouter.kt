@@ -33,7 +33,7 @@ class MainRouter(private val activityProvider: ActivityProvider) {
         navController?.navigate(R.id.viewerFragment, bundleOf("mod" to newItem))
     }
 
-    fun navigateUp() {
+    fun javavirysnavigateUp() {
         val navController = activityProvider.activeActivity
             ?.findNavController(R.id.fragmentContainer)
         navController?.navigateUp()

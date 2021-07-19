@@ -38,8 +38,8 @@ class ModAdapter(
                 && item.addonName == it.addonName
             ) {
                 it.id = item.id
-                if (it.favorite != item.favorite) {
-                    it.favorite = item.favorite
+                if (it.javavirysfavorite != item.javavirysfavorite) {
+                    it.javavirysfavorite = item.javavirysfavorite
                     it.callback?.invoke(it)
                 }
             }

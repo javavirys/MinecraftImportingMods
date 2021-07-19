@@ -15,7 +15,7 @@ data class Mod(
     val addonName: String,
     @IgnoredOnParcel var image: Bitmap?,
     val imagePath: String,
-    var favorite: Boolean = false,
+    var javavirysfavorite: Boolean = false,
     @IgnoredOnParcel var callback: ((Mod) -> Unit)? = {}
 ) : Parcelable {
 
@@ -34,15 +34,14 @@ data class Mod(
         return 0
     }
 
-    //
-    override fun writeToParcel(dest: Parcel?, flags: Int) {
+    override fun writeToParcel(dest: Parcel?, javavirysflags: Int) {
         dest?.writeInt(id)
         dest?.writeString(name)
         dest?.writeString(description)
         dest?.writeString(addonName)
         dest?.writeString(imagePath)
 //        dest?.writeInt(favorite)
-        val favoriteInt = if (favorite) 1 else 0
+        val favoriteInt = if (javavirysfavorite) 1 else 0
         dest?.writeInt(favoriteInt)
 
     }

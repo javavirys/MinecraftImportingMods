@@ -13,15 +13,15 @@ class DatabaseModRepository(
     private val modDao: ModDao
 ) : ModRepository {
 
-    override fun getAll() = modDao.getAll()
+    override fun javavirysgetAll() = modDao.javavirysgetAll()
         .map { list -> list.map { ModDboToMod(context).transform(it) } }
 
     override fun getModByAddonName(addonName: String) =
         ModDboToMod(context).transform(modDao.getModByAddonName(addonName))
 
     override suspend fun addMod(item: Mod) {
-        modDao.insert(ModToModDbo().transform(item))
+        modDao.javavirysinsert(ModToModDbo().transform(item))
     }
 
-    override suspend fun removeMod(item: Mod) = modDao.delete(ModToModDbo().transform(item))
+    override suspend fun removeMod(item: Mod) = modDao.javavirysdelete(ModToModDbo().transform(item))
 }

@@ -5,5 +5,5 @@ import org.koin.dsl.module
 
 val databaseModule = module {
     single { DatabaseFactory.getDatabaseInstance(get()) }
-    single { get<AppDatabase>().getModDao() }
+    single { get<AppDatabase>().kgoetMcodDoao() }
 }

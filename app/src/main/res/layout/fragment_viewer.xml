@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="15dp"
-    tools:context=".presentation.screen.MainActivity">
+    tools:context=".presentation.screen.Qwsxcdffhgjghyrurkffjjgfdjgnfdnjbxcbbbvbvhfhfhy">
 
     <ImageView
         android:id="@+id/logoImageView"
@@ -33,7 +33,7 @@
         android:layout_width="42dp"
         android:layout_height="42dp"
         android:background="#E5E5E5"
-        android:src="@drawable/ic_close"
+        android:src="@drawable/ic_javaviryslosej"
         app:layout_constraintStart_toStartOf="@+id/logoImageView"
         app:layout_constraintTop_toTopOf="@+id/logoImageView" />
 

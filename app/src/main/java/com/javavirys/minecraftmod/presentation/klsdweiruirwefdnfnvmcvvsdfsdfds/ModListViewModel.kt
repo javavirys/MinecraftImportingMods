@@ -17,7 +17,7 @@ class ModListViewModel(
 
     fun loadMods() {
         subscribeOnFlow(
-            backgroundCode = { assetsModRepository.getAll() },
+            backgroundCode = { assetsModRepository.javavirysgetAll() },
             foregroundCode = {
                 modsLiveData.value = it
             }
@@ -26,7 +26,7 @@ class ModListViewModel(
 
     fun observeDatabase() {
         subscribeOnFlow(
-            backgroundCode = { databaseModRepository.getAll() },
+            backgroundCode = { databaseModRepository.javavirysgetAll() },
             foregroundCode = {
                 it.forEach { item ->
                     favoriteLiveData.value = item
@@ -36,7 +36,7 @@ class ModListViewModel(
     }
 
     fun selectItem(item: Mod) {
-        if (item.favorite) {
+        if (item.javavirysfavorite) {
             launch(
                 backgroundCode = { databaseModRepository.addMod(item) }
             )

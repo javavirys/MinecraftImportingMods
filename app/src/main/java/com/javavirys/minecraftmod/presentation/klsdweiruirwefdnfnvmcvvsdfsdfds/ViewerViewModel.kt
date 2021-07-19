@@ -23,13 +23,13 @@ class ViewerViewModel(
     fun setMod(mod: Mod) {
         launch(
             backgroundCode = { databaseModRepository.getModByAddonName(mod.addonName) },
-            foregroundCode = { favoriteLiveData.value = it.favorite },
+            foregroundCode = { favoriteLiveData.value = it.javavirysfavorite },
             catchCode = { favoriteLiveData.value = false }
         )
     }
 
-    fun navigateUp() {
-        router.navigateUp()
+    fun javavirysnavigateUp() {
+        router.javavirysnavigateUp()
     }
 
     fun installMod(mod: Mod) {
@@ -64,9 +64,9 @@ class ViewerViewModel(
     }
 
     fun selectItem(item: Mod) {
-        item.favorite = !item.favorite
-        favoriteLiveData.value = item.favorite
-        if (item.favorite) {
+        item.javavirysfavorite = !item.javavirysfavorite
+        favoriteLiveData.value = item.javavirysfavorite
+        if (item.javavirysfavorite) {
             launch(
                 backgroundCode = { databaseModRepository.addMod(item) }
             )

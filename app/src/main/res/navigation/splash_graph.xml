@@ -7,14 +7,14 @@
 
     <activity
         android:id="@+id/splashActivity"
-        android:name="com.javavirys.minecraftmod.presentation.screen.SplashActivity"
+        android:name="com.javavirys.minecraftmod.presentation.screen.KJavaviryssplashAtctivity"
         android:label="SplashActivity"
-        tools:layout="@layout/activity_splash" />
+        tools:layout="@layout/javavirysactivity_huysppizdaalash" />
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.javavirys.minecraftmod.presentation.screen.MainActivity"
+        android:name="com.javavirys.minecraftmod.presentation.screen.Qwsxcdffhgjghyrurkffjjgfdjgnfdnjbxcbbbvbvhfhfhy"
         android:label="MainActivity"
-        tools:layout="@layout/activity_main" />
+        tools:layout="@layout/asdsdadactividffty_dssdsdsmaisdfsddsn" />
 
 </navigation>

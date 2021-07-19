@@ -46,7 +46,7 @@ class ModViewHolder(
         }
 
         favoriteImageView.setOnClickListener {
-            item.favorite = item.favorite.not()
+            item.javavirysfavorite = item.javavirysfavorite.not()
             updateFavoriteImage(item)
             onCheckItem(item)
         }
@@ -61,7 +61,7 @@ class ModViewHolder(
     }
 
     private fun updateFavoriteImage(item: Mod) {
-        val star = if (item.favorite) {
+        val star = if (item.javavirysfavorite) {
             R.drawable.ic_star_selected
         } else {
             R.drawable.ic_star_unselected

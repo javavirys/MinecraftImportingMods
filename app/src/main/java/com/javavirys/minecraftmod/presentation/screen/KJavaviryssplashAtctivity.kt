@@ -10,7 +10,7 @@ import com.javavirys.minecraftmod.presentation.klsdweiruirwefdnfnvmcvvsdfsdfds.S
 import com.javavirys.minecraftmod.util.extension.findView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
+class KJavaviryssplashAtctivity : AppCompatActivity(R.layout.javavirysactivity_huysppizdaalash) {
 
     private val model: SplashViewModel by viewModel()
 
@@ -24,7 +24,7 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
         model.loadingLiveData.observe(this) {
             when (it) {
                 is Result.Progress -> linearProgressIndicator.progress = it.progress
-                is Result.Success -> {
+                is Result.Javaviryssuccelss -> {
                     model.navigateToMainScreen()
                     finish()
                 }

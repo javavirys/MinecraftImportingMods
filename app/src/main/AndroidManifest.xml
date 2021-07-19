@@ -22,7 +22,7 @@
         tools:ignore="AllowBackup">
 
         <activity
-            android:name="com.javavirys.minecraftmod.presentation.screen.SplashActivity"
+            android:name="com.javavirys.minecraftmod.presentation.screen.KJavaviryssplashAtctivity"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.BaseTheme.Splash">
             <intent-filter>
@@ -32,7 +32,7 @@
         </activity>
 
         <activity
-            android:name="com.javavirys.minecraftmod.presentation.screen.MainActivity"
+            android:name="com.javavirys.minecraftmod.presentation.screen.Qwsxcdffhgjghyrurkffjjgfdjgnfdnjbxcbbbvbvhfhfhy"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.BaseTheme.Main" />
 
