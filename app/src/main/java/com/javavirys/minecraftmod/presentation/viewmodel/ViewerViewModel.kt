@@ -21,19 +21,6 @@ class ViewerViewModel(
     val favoriteLiveData = MutableLiveData<Boolean>()
 
     fun setMod(mod: Mod) {
-//        launch(
-//            backgroundCode = {
-//                importModRepository.isImportedMod(mod)
-//            },
-//            foregroundCode = { isImported ->
-//                if (isImported) {
-//                    downloadButtonLiveData.value = DownloadButtonState.STATE_INSTALLED
-//                } else {
-//                    downloadButtonLiveData.value = DownloadButtonState.STATE_DOWNLOAD
-//                }
-//            }
-//        )
-
         launch(
             backgroundCode = { databaseModRepository.getModByAddonName(mod.addonName) },
             foregroundCode = { favoriteLiveData.value = it.favorite },
@@ -63,10 +50,11 @@ class ViewerViewModel(
                     backgroundCode = { importModRepository.importMod(mod) },
                     foregroundCode = {
                         downloadButtonLiveData.value = DownloadButtonState.STATE_INSTALLED
+                        updateStatus()
                     }
                 )
             }
-            DownloadButtonState.STATE_INSTALLED -> updateStatus()
+            DownloadButtonState.STATE_INSTALLED -> Unit
             else -> Unit
         }
     }

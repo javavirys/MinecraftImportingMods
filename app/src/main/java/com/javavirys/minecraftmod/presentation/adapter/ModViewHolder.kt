@@ -5,15 +5,17 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.javavirys.minecraftmod.R
 import com.javavirys.minecraftmod.core.entity.Mod
+import com.javavirys.minecraftmod.util.extension.loadBitmapFromAssets
 
 class ModViewHolder(
     view: View,
     private val onItemClick: (item: Mod) -> Unit,
     private val onCheckItem: (item: Mod) -> Unit
 ) : RecyclerView.ViewHolder(view) {
+
+    private var favoriteImage: Int = 0
 
     private val titleTextView by lazy {
         ViewCompat.requireViewById<TextView>(
@@ -52,6 +54,9 @@ class ModViewHolder(
         updateFavoriteImage(item)
 
         titleTextView.text = item.name
+        if (item.image == null) {
+            item.image = itemView.context.loadBitmapFromAssets("images/${item.imagePath}")
+        }
         logoImageView.setImageBitmap(item.image)
     }
 
@@ -62,8 +67,11 @@ class ModViewHolder(
             R.drawable.ic_star_unselected
         }
 
-        Glide.with(favoriteImageView)
-            .load(star)
-            .into(favoriteImageView)
+        if (star == favoriteImage) {
+            return
+        }
+        favoriteImage = star
+
+        favoriteImageView.setImageResource(star)
     }
 }

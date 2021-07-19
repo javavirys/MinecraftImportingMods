@@ -13,7 +13,7 @@ data class Mod(
     val name: String,
     val description: String,
     val addonName: String,
-    @IgnoredOnParcel val image: Bitmap?,
+    @IgnoredOnParcel var image: Bitmap?,
     val imagePath: String,
     var favorite: Boolean = false,
     @IgnoredOnParcel var callback: ((Mod) -> Unit)? = {}

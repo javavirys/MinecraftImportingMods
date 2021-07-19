@@ -6,14 +6,16 @@ plugins {
     id 'kotlin-parcelize'
 }
 
+apply from: "../versions.gradle"
+
 android {
-    compileSdkVersion 30
-    buildToolsVersion "30.0.3"
+    compileSdkVersion versions.android.compileSdk
+    buildToolsVersion versions.android.buildTools
 
     defaultConfig {
         applicationId "com.javavirys.minecraftmod"
-        minSdkVersion 22
-        targetSdkVersion 30
+        minSdkVersion versions.android.minSdk
+        targetSdkVersion versions.android.targetSdk
         versionCode 1
         versionName "1.0"
         javaCompileOptions {
@@ -32,6 +34,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
 
     kotlinOptions {

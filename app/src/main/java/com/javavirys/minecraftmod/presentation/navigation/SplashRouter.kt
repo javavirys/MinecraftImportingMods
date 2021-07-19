@@ -11,7 +11,7 @@ class SplashRouter(private val context: Context) {
 
     fun navigateToMainScreen() {
         val intent = Intent(context, MainActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
         activityNavigator.navigate(
             activityNavigator.createDestination().setIntent(intent),
             null,

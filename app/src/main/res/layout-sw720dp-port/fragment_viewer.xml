@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/logoImageView"
         android:layout_width="0dp"
-        android:layout_height="140dp"
+        android:layout_height="350dp"
         android:background="#60000000"
         android:scaleType="fitXY"
         android:src="@drawable/ic_baseline_image_24"

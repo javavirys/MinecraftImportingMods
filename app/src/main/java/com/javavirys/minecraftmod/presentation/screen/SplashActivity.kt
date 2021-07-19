@@ -24,7 +24,10 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
         model.loadingLiveData.observe(this) {
             when (it) {
                 is Result.Progress -> linearProgressIndicator.progress = it.progress
-                is Result.Success -> model.navigateToMainScreen()
+                is Result.Success -> {
+                    model.navigateToMainScreen()
+                    finish()
+                }
                 is Result.Error -> throw UnsupportedOperationException()
             }
         }
